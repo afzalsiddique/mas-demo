@@ -1,0 +1,76 @@
+repeat,qid,type,condition,prediction,gold,em,f1,calls,input_tokens,output_tokens,total_tokens,errors
+0,5ae56a3f5542992663a4f1f4,bridge,A_single,Bonobo,pygmy chimpanzee,0,0.0,2,1140,66,1206,0
+0,5ae56a3f5542992663a4f1f4,bridge,B_vote@4,Bonobo,pygmy chimpanzee,0,0.0,8,4558,241,4799,0
+0,5ae56a3f5542992663a4f1f4,bridge,C_team,Insufficient information,pygmy chimpanzee,0,0.0,15,9759,628,10387,0
+0,5ab43b8a5542991779162c22,bridge,A_single,1827,1827,1,1.0,2,1451,89,1540,0
+0,5ab43b8a5542991779162c22,bridge,B_vote@4,1827,1827,1,1.0,8,6888,466,7354,0
+0,5ab43b8a5542991779162c22,bridge,C_team,1827,1827,1,1.0,9,5300,307,5607,0
+0,5ae5da8d55429929b08079d1,bridge,A_single,Philip Rivers,Eli Manning,0,0.0,2,1741,128,1869,0
+0,5ae5da8d55429929b08079d1,bridge,B_vote@4,Philip Rivers,Eli Manning,0,0.0,8,6964,491,7455,0
+0,5ae5da8d55429929b08079d1,bridge,C_team,Peyton Manning,Eli Manning,0,0.5,9,5899,389,6288,0
+0,5a77bdcb5542997042120b0b,comparison,A_single,Morgan Llywelyn,Morgan Llywelyn,1,1.0,2,1230,102,1332,0
+0,5a77bdcb5542997042120b0b,comparison,B_vote@4,Morgan Llywelyn,Morgan Llywelyn,1,1.0,8,4920,414,5334,0
+0,5a77bdcb5542997042120b0b,comparison,C_team,Morgan Llywelyn,Morgan Llywelyn,1,1.0,10,5067,316,5383,0
+0,5a7574e25542996c70cfaf01,comparison,A_single,Ibn Arabi,ibnʿArabī,1,1.0,2,2067,96,2163,0
+0,5a7574e25542996c70cfaf01,comparison,B_vote@4,Ibn Arabi,ibnʿArabī,1,1.0,8,8268,399,8667,0
+0,5a7574e25542996c70cfaf01,comparison,C_team,Ibn Arabi,ibnʿArabī,1,1.0,8,5321,338,5659,0
+1,5ae56a3f5542992663a4f1f4,bridge,A_single,Bonobo,pygmy chimpanzee,0,0.0,2,1139,58,1197,0
+1,5ae56a3f5542992663a4f1f4,bridge,B_vote@4,Bonobo,pygmy chimpanzee,0,0.0,8,4556,232,4788,0
+1,5ae56a3f5542992663a4f1f4,bridge,C_team,pygmy chimpanzee,pygmy chimpanzee,1,1.0,8,3923,230,4153,0
+1,5ab43b8a5542991779162c22,bridge,A_single,1827,1827,1,1.0,2,1687,265,1952,0
+1,5ab43b8a5542991779162c22,bridge,B_vote@4,1827,1827,1,1.0,8,6430,570,7000,0
+1,5ab43b8a5542991779162c22,bridge,C_team,1827,1827,1,1.0,9,5412,336,5748,0
+1,5ae5da8d55429929b08079d1,bridge,A_single,Philip Rivers,Eli Manning,0,0.0,2,1741,96,1837,0
+1,5ae5da8d55429929b08079d1,bridge,B_vote@4,Philip Rivers,Eli Manning,0,0.0,8,6964,361,7325,0
+1,5ae5da8d55429929b08079d1,bridge,C_team,Peyton Manning,Eli Manning,0,0.5,9,5884,377,6261,0
+1,5a77bdcb5542997042120b0b,comparison,A_single,Morgan Llywelyn,Morgan Llywelyn,1,1.0,2,1230,96,1326,0
+1,5a77bdcb5542997042120b0b,comparison,B_vote@4,Morgan Llywelyn,Morgan Llywelyn,1,1.0,8,4920,404,5324,0
+1,5a77bdcb5542997042120b0b,comparison,C_team,Morgan Llywelyn,Morgan Llywelyn,1,1.0,8,4503,350,4853,0
+1,5a7574e25542996c70cfaf01,comparison,A_single,Ibn Arabi,ibnʿArabī,1,1.0,2,2067,105,2172,0
+1,5a7574e25542996c70cfaf01,comparison,B_vote@4,Ibn Arabi,ibnʿArabī,1,1.0,8,8268,408,8676,0
+1,5a7574e25542996c70cfaf01,comparison,C_team,Ibn Arabi,ibnʿArabī,1,1.0,8,5327,341,5668,0
+2,5ae56a3f5542992663a4f1f4,bridge,A_single,Bonobo,pygmy chimpanzee,0,0.0,2,1140,59,1199,0
+2,5ae56a3f5542992663a4f1f4,bridge,B_vote@4,Bonobo,pygmy chimpanzee,0,0.0,8,4557,233,4790,0
+2,5ae56a3f5542992663a4f1f4,bridge,C_team,Insufficient evidence,pygmy chimpanzee,0,0.0,8,4501,391,4892,0
+2,5ab43b8a5542991779162c22,bridge,A_single,1827,1827,1,1.0,2,1451,89,1540,0
+2,5ab43b8a5542991779162c22,bridge,B_vote@4,1827,1827,1,1.0,8,7183,635,7818,0
+2,5ab43b8a5542991779162c22,bridge,C_team,1827,1827,1,1.0,9,5310,311,5621,0
+2,5ae5da8d55429929b08079d1,bridge,A_single,Eli Manning,Eli Manning,1,1.0,2,1741,62,1803,0
+2,5ae5da8d55429929b08079d1,bridge,B_vote@4,Eli Manning,Eli Manning,1,1.0,8,6964,337,7301,0
+2,5ae5da8d55429929b08079d1,bridge,C_team,Insufficient information,Eli Manning,0,0.0,9,5902,387,6289,0
+2,5a77bdcb5542997042120b0b,comparison,A_single,Morgan Llywelyn,Morgan Llywelyn,1,1.0,2,1230,102,1332,0
+2,5a77bdcb5542997042120b0b,comparison,B_vote@4,Morgan Llywelyn,Morgan Llywelyn,1,1.0,8,4920,406,5326,0
+2,5a77bdcb5542997042120b0b,comparison,C_team,Morgan Llywelyn,Morgan Llywelyn,1,1.0,10,5179,361,5540,0
+2,5a7574e25542996c70cfaf01,comparison,A_single,Ibn Arabi,ibnʿArabī,1,1.0,2,2067,96,2163,0
+2,5a7574e25542996c70cfaf01,comparison,B_vote@4,Ibn Arabi,ibnʿArabī,1,1.0,8,8268,407,8675,0
+2,5a7574e25542996c70cfaf01,comparison,C_team,Ibn Arabi,ibnʿArabī,1,1.0,10,6197,413,6610,0
+3,5ae56a3f5542992663a4f1f4,bridge,A_single,Bonobo,pygmy chimpanzee,0,0.0,2,1077,59,1136,0
+3,5ae56a3f5542992663a4f1f4,bridge,B_vote@4,Bonobo,pygmy chimpanzee,0,0.0,8,4494,233,4727,0
+3,5ae56a3f5542992663a4f1f4,bridge,C_team,Pygmy Chimpanzee,pygmy chimpanzee,1,1.0,9,5239,367,5606,0
+3,5ab43b8a5542991779162c22,bridge,A_single,1827,1827,1,1.0,2,1449,88,1537,0
+3,5ab43b8a5542991779162c22,bridge,B_vote@4,1827,1827,1,1.0,8,13418,1130,14548,0
+3,5ab43b8a5542991779162c22,bridge,C_team,1827,1827,1,1.0,9,5455,352,5807,0
+3,5ae5da8d55429929b08079d1,bridge,A_single,Eli Manning,Eli Manning,1,1.0,2,1741,133,1874,0
+3,5ae5da8d55429929b08079d1,bridge,B_vote@4,Eli Manning,Eli Manning,1,1.0,8,6964,379,7343,0
+3,5ae5da8d55429929b08079d1,bridge,C_team,Peyton Manning,Eli Manning,0,0.5,9,5903,390,6293,0
+3,5a77bdcb5542997042120b0b,comparison,A_single,Morgan Llywelyn,Morgan Llywelyn,1,1.0,2,1230,104,1334,0
+3,5a77bdcb5542997042120b0b,comparison,B_vote@4,Morgan Llywelyn,Morgan Llywelyn,1,1.0,8,4920,414,5334,0
+3,5a77bdcb5542997042120b0b,comparison,C_team,Morgan Llywelyn,Morgan Llywelyn,1,1.0,11,6349,419,6768,0
+3,5a7574e25542996c70cfaf01,comparison,A_single,Ibn Arabi,ibnʿArabī,1,1.0,2,2067,96,2163,0
+3,5a7574e25542996c70cfaf01,comparison,B_vote@4,Ibn Arabi,ibnʿArabī,1,1.0,8,8268,384,8652,0
+3,5a7574e25542996c70cfaf01,comparison,C_team,Ibn Arabi,ibnʿArabī,1,1.0,8,5337,346,5683,0
+4,5ae56a3f5542992663a4f1f4,bridge,A_single,Bonobo,pygmy chimpanzee,0,0.0,2,1139,58,1197,0
+4,5ae56a3f5542992663a4f1f4,bridge,B_vote@4,Bonobo,pygmy chimpanzee,0,0.0,8,4564,245,4809,0
+4,5ae56a3f5542992663a4f1f4,bridge,C_team,Pygmy chimpanzee,pygmy chimpanzee,1,1.0,9,5336,416,5752,0
+4,5ab43b8a5542991779162c22,bridge,A_single,1849,1827,0,0.0,2,2637,231,2868,0
+4,5ab43b8a5542991779162c22,bridge,B_vote@4,1827,1827,1,1.0,8,8176,684,8860,0
+4,5ab43b8a5542991779162c22,bridge,C_team,1827,1827,1,1.0,9,5394,327,5721,0
+4,5ae5da8d55429929b08079d1,bridge,A_single,Eli Manning,Eli Manning,1,1.0,2,1741,126,1867,0
+4,5ae5da8d55429929b08079d1,bridge,B_vote@4,Eli Manning,Eli Manning,1,1.0,8,6964,411,7375,0
+4,5ae5da8d55429929b08079d1,bridge,C_team,PROPOSED ANSWER: Peyton Manning,Eli Manning,0,0.333,9,5934,423,6357,0
+4,5a77bdcb5542997042120b0b,comparison,A_single,Morgan Llywelyn,Morgan Llywelyn,1,1.0,2,1230,102,1332,0
+4,5a77bdcb5542997042120b0b,comparison,B_vote@4,Morgan Llywelyn,Morgan Llywelyn,1,1.0,8,4920,398,5318,0
+4,5a77bdcb5542997042120b0b,comparison,C_team,Morgan Llywelyn,Morgan Llywelyn,1,1.0,11,6302,399,6701,0
+4,5a7574e25542996c70cfaf01,comparison,A_single,Ibn Arabi,ibnʿArabī,1,1.0,2,2067,96,2163,0
+4,5a7574e25542996c70cfaf01,comparison,B_vote@4,Ibn Arabi,ibnʿArabī,1,1.0,8,8268,400,8668,0
+4,5a7574e25542996c70cfaf01,comparison,C_team,Ibn Arabi,ibnʿArabī,1,1.0,8,5327,341,5668,0

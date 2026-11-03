@@ -1,0 +1,10 @@
+{
+  "k": 3,
+  "repeats": 1,
+  "n_questions": 2,
+  "model": "qwen2.5-7b-instruct",
+  "temperature": 0.7,
+  "max_tokens_per_call": 768,
+  "mean_tokens_team_run": 5242,
+  "mean_tokens_single_sample": 1396
+}

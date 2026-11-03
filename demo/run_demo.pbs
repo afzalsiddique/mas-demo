@@ -1,0 +1,88 @@
+#!/bin/bash
+# Serve Qwen2.5-7B-Instruct with vLLM on one A10 (24 GB), then run the experiment or the demo UI.
+#
+#   qsub run_demo.pbs                      # full experiment, then exits
+#   qsub -v MODE=smoke run_demo.pbs        # 2 questions x 1 repeat, quick check
+#   qsub -v MODE=ui run_demo.pbs           # server + side-by-side web UI (Streamlit);
+#                                          # the SSH tunnel command is in logs/ui_tunnel.txt
+#PBS -N mas-demo
+#PBS -q gpus
+#PBS -l select=1:ncpus=8:mem=48gb:ngpus=1:glist=a10
+#PBS -l walltime=04:00:00
+#PBS -W group_list=X
+#PBS -m abe
+#PBS -M Y
+#PBS -j oe
+#PBS -o logs/
+
+set -euo pipefail
+cd "${PBS_O_WORKDIR:-$(dirname "$0")}"
+MODE="${MODE:-experiment}"
+
+VENV=/path/to/venv
+export PATH="$VENV/bin:$PATH"
+export HF_HUB_OFFLINE=1            # weights are pre-downloaded; no network needed
+export VLLM_NO_USAGE_STATS=1
+export DO_NOT_TRACK=1
+export VLLM_USE_FLASHINFER_SAMPLER=0   # its sampler JIT-compiles with nvcc, which the GPU nodes lack
+
+# Pre-downloaded with:  hf download Qwen/Qwen2.5-7B-Instruct --local-dir $MODEL
+# (kept in project space, not scratch, because scratch is purged)
+MODEL=/path/to/hf_models/Qwen2.5-7B-Instruct
+export MAS_MODEL=qwen2.5-7b-instruct
+PORT=$((8000 + RANDOM % 1000))
+export MAS_BASE_URL="http://$(hostname):${PORT}/v1"
+mkdir -p logs results
+
+echo "[$(date)] node=$(hostname) mode=$MODE port=$PORT"
+nvidia-smi --query-gpu=name,memory.total --format=csv
+
+# 7B in bf16 is ~15 GB of weights; the rest of the 24 GB goes to the KV cache.
+vllm serve "$MODEL" \
+  --served-model-name "$MAS_MODEL" \
+  --host 0.0.0.0 --port "$PORT" \
+  --dtype bfloat16 \
+  --max-model-len 16384 \
+  --gpu-memory-utilization 0.92 \
+  --enable-auto-tool-choice --tool-call-parser hermes \
+  --disable-uvicorn-access-log \
+  > "logs/vllm_${PBS_JOBID:-local}.log" 2>&1 &
+VLLM_PID=$!
+trap 'kill $VLLM_PID 2>/dev/null || true; rm -f logs/server_address logs/ui_tunnel.txt' EXIT
+
+for i in $(seq 1 120); do                     # wait up to 10 min for the server
+  if curl -sf "http://localhost:${PORT}/health" >/dev/null; then break; fi
+  if ! kill -0 $VLLM_PID 2>/dev/null; then echo "vLLM died"; tail -50 "logs/vllm_${PBS_JOBID:-local}.log"; exit 1; fi
+  sleep 5
+done
+curl -sf "http://localhost:${PORT}/health" >/dev/null || { echo "vLLM not ready"; exit 1; }
+echo "$MAS_BASE_URL" > logs/server_address
+echo "[$(date)] server ready at $MAS_BASE_URL"
+
+case "$MODE" in
+  smoke)
+    python run_experiment.py --repeats 1 --limit 2 --k 3 --out results/smoke
+    ;;
+  experiment)
+    python run_experiment.py --repeats 5
+    python analyze.py
+    ;;
+  ui)
+    UI_PORT="${UI_PORT:-8501}"
+    NODE="$(hostname -f)"
+    cat > logs/ui_tunnel.txt <<EOT
+UI is starting on ${NODE}:${UI_PORT} (job ${PBS_JOBID:-local}).
+On your LOCAL machine run:
+  ssh -N -L ${UI_PORT}:${NODE}:${UI_PORT} ${USER}@prime.ccast.ndsu.edu
+If the login node refuses the direct tunnel, use a jump host:
+  ssh -J ${USER}@prime.ccast.ndsu.edu -N -L ${UI_PORT}:${NODE}:${UI_PORT} ${USER}@prime.ccast.ndsu.edu
+Then open http://localhost:${UI_PORT}
+EOT
+    cat logs/ui_tunnel.txt
+    streamlit run app.py \
+      --server.address 0.0.0.0 --server.port "$UI_PORT" --server.headless true \
+      --browser.gatherUsageStats false \
+      --server.enableXsrfProtection false --server.enableCORS false
+    ;;
+esac
+echo "[$(date)] done"

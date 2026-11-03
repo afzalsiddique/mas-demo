@@ -1,0 +1,7 @@
+repeat,qid,type,condition,prediction,gold,em,f1,calls,input_tokens,output_tokens,total_tokens,errors
+0,5ae56a3f5542992663a4f1f4,bridge,A_single,Pan paniscus,pygmy chimpanzee,0,0.0,2,1140,111,1251,0
+0,5ae56a3f5542992663a4f1f4,bridge,B_vote@3,Bonobo,pygmy chimpanzee,0,0.0,6,3418,227,3645,0
+0,5ae56a3f5542992663a4f1f4,bridge,C_team,INSUFFICIENT EVIDENCE,pygmy chimpanzee,0,0.0,8,4323,356,4679,0
+0,5ab43b8a5542991779162c22,bridge,A_single,1827,1827,1,1.0,2,1451,89,1540,0
+0,5ab43b8a5542991779162c22,bridge,B_vote@3,1827,1827,1,1.0,6,4349,264,4613,0
+0,5ab43b8a5542991779162c22,bridge,C_team,1827,1827,1,1.0,9,5436,369,5805,0

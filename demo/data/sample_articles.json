@@ -1,0 +1,57 @@
+{
+  "note": "Five of the 66,581 paragraphs in data/corpus.json (first paragraph of each Wikipedia article, 2017). The agents search the whole corpus, not only these five.",
+  "articles": [
+    {
+      "title": "The Prestige (film)",
+      "text": "The Prestige is a 2006 British-American mystery thriller film directed by Christopher Nolan, from a screenplay adapted by Nolan and his brother Jonathan from Christopher Priest's 1995 novel of the same name. Its story follows Robert Angier and Alfred Borden, rival stage magicians in London at the end of the 19th century. Obsessed with creating the best stage illusion, they engage in competitive one-upmanship with tragic results. The film stars Hugh Jackman as Robert Angier, Christian Bale as Alfred Borden, and David Bowie as Nikola Tesla. It also stars Scarlett Johansson, Michael Caine, Piper Perabo, Andy Serkis, and Rebecca Hall. The film reunites Nolan with actors Bale and Caine from \"Batman Begins\" and returning cinematographer Wally Pfister, production designer Nathan Crowley, film score composer David Julyan, and editor Lee Smith."
+    },
+    {
+      "title": "Christopher Nolan",
+      "text": "Christopher Edward Nolan ( ; born 30 July 1970) is an English-American film director, producer, and screenwriter. He is one of the highest-grossing directors in history, and among the most successful and acclaimed filmmakers of the 21st century."
+    },
+    {
+      "title": "Rumble Fish",
+      "text": "Rumble Fish is a 1983 American drama film directed by Francis Ford Coppola. It is based on the novel \"Rumble Fish\" by S. E. Hinton, who also co-wrote the screenplay."
+    },
+    {
+      "title": "Francis Ford Coppola",
+      "text": "Francis Ford Coppola ( ; born April 7, 1939), also credited as Francis Coppola, is a semi-retired American film director, producer, screenwriter and film composer. He was a central figure in the New Hollywood wave of filmmaking."
+    },
+    {
+      "title": "The Outsiders (novel)",
+      "text": "The Outsiders is a coming-of-age novel by S. E. Hinton, first published in 1967 by Viking Press. Hinton was 15 when she started writing the novel, but did most of the work when she was 16 and a junior in high school. Hinton was 18 when the book was published. The book follows two rival groups, the Greasers and the Socs (pronounced by the author as , short for \"Socials\"), who are divided by their socioeconomic status. The story is told in first-person narrative by protagonist Ponyboy Curtis."
+    }
+  ],
+  "example_questions": [
+    {
+      "type": "bridge",
+      "question": "In what year was the director of The Prestige born?",
+      "answer": "1970",
+      "uses": [
+        "The Prestige (film)",
+        "Christopher Nolan"
+      ],
+      "reasoning": "The Prestige was 'directed by Christopher Nolan'; Nolan was 'born 30 July 1970'."
+    },
+    {
+      "type": "bridge",
+      "question": "The film Rumble Fish is based on a novel whose author also wrote which coming-of-age novel published in 1967?",
+      "answer": "The Outsiders",
+      "uses": [
+        "Rumble Fish",
+        "The Outsiders (novel)"
+      ],
+      "reasoning": "Rumble Fish is 'based on the novel \"Rumble Fish\" by S. E. Hinton'; 'The Outsiders is a coming-of-age novel by S. E. Hinton, first published in 1967'."
+    },
+    {
+      "type": "comparison",
+      "question": "Who was born first, Christopher Nolan or Francis Ford Coppola?",
+      "answer": "Francis Ford Coppola",
+      "uses": [
+        "Christopher Nolan",
+        "Francis Ford Coppola"
+      ],
+      "reasoning": "Nolan: born 30 July 1970; Coppola: born April 7, 1939."
+    }
+  ]
+}
